@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Booking</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .navbar {
+      background-color: green;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .navbar img {
+      height: 100px;
+    }
+    
+    .content {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    .booking-form input[type="text"],
+    .booking-form input[type="number"],
+    .booking-form input[type="email"],
+    .booking-form textarea {
+      padding: 5px;
+      margin-bottom: 10px;
+      width: 200px;
+    }
+    
+    .booking-form input[type="submit"] {
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 120px;
+    }
+    
+    .footer {
+      background-color: green;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <img src="https://www.48hourslogo.com/oss/works/2022/01/13/21255711641/115168_45900_fc8ca08f-43ca-45b0-9147-3c86b3eb880a.jpg" alt="Restaurant Logo">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Reservation</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="content">
+    <div class="booking-form">
+      <h2>Place your booking</h2>
+      <input type="text" placeholder="Name">
+      <input type="number" placeholder="Number of guests">
+      <input type="tel" placeholder="Phone number">
+      <input type="email" placeholder="Email address">
+      <textarea placeholder="Additional requests"></textarea>
+      <input type="submit" value="Submit Booking" onclick="submitBooking()">
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <p>&copy; 2023 Little lemon. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitBooking() {
+      const name = document.querySelector('input[type="text"]').value;
+      const guests = document.querySelector('input[type="number"]').value;
+      const phone = document.querySelector('input[type="tel"]').value;
+      const email = document.querySelector('input[type="email"]').value;
+      const requests = document.querySelector('textarea').value;
+      
+      const bookingInfo = `Name: ${name}\nGuests: ${guests}\nPhone: ${phone}\nEmail: ${email}\nRequests: ${requests}`;
+      alert(bookingInfo);
+    }
+  </script>
+</body>
+</html>
+
